@@ -27,14 +27,18 @@ public class ListMusic extends  AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.listmusic_fragment_layout);
-        AnhXa();
+        AddControl();
         AddSong();
-        MyAdapterMusic mayArr = new MyAdapterMusic(ListMusic.this, R.layout.item_list_music, arrayListSong);
-        lvSong.setAdapter(mayArr);
 
+        lvSong.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(ListMusic.this, "" + position , Toast.LENGTH_LONG).show();
+            }
+        });
 
     }
-    private void AnhXa()
+    private void AddControl()
     {
         lvSong = (ListView) findViewById(R.id.lvSong);
 
@@ -51,6 +55,8 @@ public class ListMusic extends  AppCompatActivity {
         arrayListSong.add(new Song("Anh Dang Noi Dau", R.raw.anh_dang_noi_dau));
         arrayListSong.add(new Song("Anh Không Sao Đâu", R.raw.anh_khong_sao_dau));
         arrayListSong.add(new Song("Yêu Khac Việt", R.raw.yeu_khacviet));
+        MyAdapterMusic mayArr = new MyAdapterMusic(ListMusic.this, R.layout.item_list_music, arrayListSong);
+        lvSong.setAdapter(mayArr);
 
     }
 
