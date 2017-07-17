@@ -15,6 +15,8 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.support.design.widget.NavigationView;
+import android.view.ContextMenu;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -73,7 +75,7 @@ public class ListMusic extends  AppCompatActivity implements NavigationView.OnNa
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
+        registerForContextMenu(lvSong);
         //
         MyAdapterMusic mayArr = new MyAdapterMusic(ListMusic.this, R.layout.item_list_music, arrayListSong);
         lvSong.setAdapter(mayArr);
@@ -132,5 +134,18 @@ public class ListMusic extends  AppCompatActivity implements NavigationView.OnNa
         } else {
             super.onBackPressed();
         }
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        getMenuInflater().inflate(R.menu.select_layout_drawer, menu);
+        super.onCreateContextMenu(menu, v, menuInfo);
+    }
+
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+
+        return super.onContextItemSelected(item);
     }
 }

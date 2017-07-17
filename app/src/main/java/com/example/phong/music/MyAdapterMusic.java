@@ -6,7 +6,9 @@ import android.graphics.drawable.Drawable;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.PopupMenu;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -32,6 +34,8 @@ public class MyAdapterMusic  extends ArrayAdapter<Song> {
         this.arr = list;
     }
 
+
+
     @Override
     public View getView(int position, View convertView,
                         ViewGroup parent) {
@@ -44,6 +48,10 @@ public class MyAdapterMusic  extends ArrayAdapter<Song> {
         TextView txtTitle = (TextView) convertView.findViewById(R.id.txtitem_song);
         //Gán giá trị cho những control đó
         txtTitle.setText(song.getTitle());
+
+
         return convertView;
     }
+
+
 }
