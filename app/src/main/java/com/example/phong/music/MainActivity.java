@@ -36,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.home_music_layout);
         AnhXa();
         AddSong();
-        LoadMediaplayer();
 
         btnPlay.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,11 +66,6 @@ public class MainActivity extends AppCompatActivity {
         songName = (TextView) findViewById(R.id.txtitem_song);
 
     }
-    private void LoadMediaplayer()
-    {
-
-    }
-
     private void AddSong()
     {
         arrayListSong = new ArrayList<>();
