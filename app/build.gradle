@@ -4,7 +4,11 @@ android {
     compileSdkVersion 25
     buildToolsVersion "25.0.0"
     defaultConfig {
+<<<<<<< HEAD
         applicationId "com.example.nhom_2_2.music"
+=======
+        applicationId "com.example.nhom22.music"
+>>>>>>> a0bce427425fab096481a0d113bc66f0534795f1
         minSdkVersion 16
         targetSdkVersion 25
         versionCode 1

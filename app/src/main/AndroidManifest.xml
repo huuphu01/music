@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<<<<<<< HEAD
     package="com.example.nhom_2_2.music">
+=======
+    package="com.example.nhom22.music">
+>>>>>>> a0bce427425fab096481a0d113bc66f0534795f1
 
     <uses-sdk
         android:minSdkVersion="16"
@@ -16,8 +20,23 @@
         android:icon="@drawable/aa"
         android:label="@string/app_name"
         android:supportsRtl="true">
+
         <activity
+<<<<<<< HEAD
             android:name="com.example.nhom_2_2.music.MainActivity"
+=======
+            android:name="com.example.nhom22.music.SplashScreenActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"></action>
+                <category android:name="android.intent.category.LAUNCHER"></category>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.example.nhom22.music.MainActivity"
+>>>>>>> a0bce427425fab096481a0d113bc66f0534795f1
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
@@ -35,6 +54,7 @@
 
         </activity>
         <activity
+<<<<<<< HEAD
             android:name="com.example.nhom_2_2.music.MyListMusic"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
@@ -48,6 +68,11 @@
                 <action android:name="android.intent.action.MAIN"></action>
                 <category android:name="android.intent.category.LAUNCHER"></category>
             </intent-filter>
+=======
+            android:name="com.example.nhom22.music.ListMusic"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+>>>>>>> a0bce427425fab096481a0d113bc66f0534795f1
 
         </activity>
     </application>

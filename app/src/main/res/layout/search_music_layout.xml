@@ -11,7 +11,11 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
+<<<<<<< HEAD
     tools:context="com.example.nhom_2_2.music.MainLayoutActivity">
+=======
+    tools:context="com.example.nhom22.music.MainLayoutActivity">
+>>>>>>> a0bce427425fab096481a0d113bc66f0534795f1
 
     <ListView
         android:layout_width="match_parent"

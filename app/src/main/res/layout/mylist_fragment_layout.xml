@@ -5,7 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+<<<<<<< HEAD
     tools:context="com.example.nhom_2_2.music.MainActivity">
+=======
+    tools:context="com.example.nhom22.music.MainLayoutActivity">
+>>>>>>> a0bce427425fab096481a0d113bc66f0534795f1
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"

@@ -5,7 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
+<<<<<<< HEAD
     tools:context="com.example.nhom_2_2.music.MainLayoutActivity">
+=======
+    tools:context="com.example.nhom22.music.MainLayoutActivity">
+>>>>>>> a0bce427425fab096481a0d113bc66f0534795f1
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
