@@ -1,41 +1,30 @@
-package com.example.phong.music;
+package com.example.nhom_2_2.music;
 
 /**
  * Created by Calm on 7/16/2017.
  */
-import android.app.Activity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.v4.view.GravityCompat;
-
 import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.support.design.widget.NavigationView;
 import android.view.ContextMenu;
-import android.view.Menu;
 import android.view.MenuItem;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
+
 import java.util.ArrayList;
 
-
-import static com.example.phong.music.R.string.navigation_drawer_close;
-import static com.example.phong.music.R.styleable.View;
-
-public class ListMusic extends  AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class MyListMusic extends  AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     ArrayList<Song> arrayListSong ;
-    ListView lvSong;
+    ListView lvMylist;
     MyAdapterMusic adapter;
     int position = 0;
     Toolbar toolbar = null;
@@ -45,26 +34,15 @@ public class ListMusic extends  AppCompatActivity implements NavigationView.OnNa
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.listmusic_fragment_layout);
+        setContentView(R.layout.mylist_fragment_layout);
         AddControl();
         AddSong();
 
-        setSupportActionBar(toolbar);
+        //setSupportActionBar(toolbar);
         // navigation code  ver1
 
 
-
-/*  Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
-        toggle.syncState();
-
-        navigation.setCheckedItem(R.id.nav_view);
-        navigation.setNavigationItemSelectedListener(this);*/
-
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+       /* Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -75,15 +53,15 @@ public class ListMusic extends  AppCompatActivity implements NavigationView.OnNa
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        registerForContextMenu(lvSong);
+        registerForContextMenu(lvSong);*/
         //
-        MyAdapterMusic mayArr = new MyAdapterMusic(ListMusic.this, R.layout.item_list_music, arrayListSong);
-        lvSong.setAdapter(mayArr);
+        MyAdapterMusic mayArr = new MyAdapterMusic(MyListMusic.this, R.layout.item_list_music, arrayListSong);
+        lvMylist.setAdapter(mayArr);
 
-        lvSong.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        lvMylist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(ListMusic.this, MainActivity.class);
+                Intent intent = new Intent(MyListMusic.this, MainActivity.class);
                 Bundle b = new Bundle(new Bundle(position));
                 b.putInt("position",position);
                 intent.putExtra("position", b);
@@ -93,7 +71,7 @@ public class ListMusic extends  AppCompatActivity implements NavigationView.OnNa
     }
     private void AddControl()
     {
-        lvSong = (ListView) findViewById(R.id.lvSong);
+        lvMylist = (ListView) findViewById(R.id.lvMylist);
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
     }
     private void AddSong()
@@ -102,8 +80,8 @@ public class ListMusic extends  AppCompatActivity implements NavigationView.OnNa
         arrayListSong.add(new Song("Anh Dang Noi Dau", R.raw.anh_dang_noi_dau));
         arrayListSong.add(new Song("Anh Không Sao Đâu", R.raw.anh_khong_sao_dau));
         arrayListSong.add(new Song("Yêu Khac Việt", R.raw.yeu_khacviet));
-        arrayListSong.add(new Song("Anh Dang Noi Dau", R.raw.anh_dang_noi_dau));
-        arrayListSong.add(new Song("Anh Không Sao Đâu", R.raw.anh_khong_sao_dau));
+        arrayListSong.add(new Song("Sau Tất Cả", R.raw.sau_tat_ca));
+        arrayListSong.add(new Song("Anh Cơ :))", R.raw.anh_khong_sao_dau));
         arrayListSong.add(new Song("Yêu Khac Việt", R.raw.yeu_khacviet));
         arrayListSong.add(new Song("Anh Dang Noi Dau", R.raw.anh_dang_noi_dau));
         arrayListSong.add(new Song("Anh Không Sao Đâu", R.raw.anh_khong_sao_dau));

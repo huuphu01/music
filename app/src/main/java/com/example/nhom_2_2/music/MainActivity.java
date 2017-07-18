@@ -1,14 +1,12 @@
-package com.example.phong.music;
+package com.example.nhom_2_2.music;
 /**
  * Created by phong on 12/5/2016.
  */
 import android.content.Intent;
 import android.media.MediaPlayer;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -19,10 +17,6 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private ImageButton btnPlay;
-    private ImageButton btnRepeat;
-    private ImageButton btnShuffle;
-    private TextView txtStartTime;
-    private TextView txtFinalTime;
     private TextView songName;
     private ImageView iv;
     ArrayList<Song> arrayListSong;
@@ -36,13 +30,25 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.home_music_layout);
         AnhXa();
         AddSong();
+        mediaPlayer = MediaPlayer.create(MainActivity.this, arrayListSong.get(position).getFile());
+        songName.setText(arrayListSong.get(position).getTitle());
+        for (int i = 0 ; i < arrayListSong.size()  - 1 ; i ++)
+        {
+            int n = arrayListSong.get(position).getFile();
+            n = i = position ++ ;
+        }
+        mediaPlayer.start();
 
         btnPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mediaPlayer  = MediaPlayer.create(MainActivity.this,arrayListSong.get(position).getFile());
-                songName.setText(arrayListSong.get(position).getTitle());
-                mediaPlayer.start();
+                laydata();
+
+                if(mediaPlayer.isPlaying())
+                {
+                    mediaPlayer.stop();
+                }
+
             }
         });
     }
@@ -50,11 +56,11 @@ public class MainActivity extends AppCompatActivity {
     {
         Intent i = getIntent();
         if (i != null) {
-            Bundle b = i.getBundleExtra("position");
-            if(b != null)
-                position = b.getInt("position");
+            Bundle bundle = i.getBundleExtra("position");
+            if(bundle != null)
+                position = bundle.getInt("position");
 
-            Bundle b1 = i.getBundleExtra("data");
+            Bundle b1 = i.getBundleExtra("position");
             if(b1 != null){
                 String name = b1.getString("name");
             }
